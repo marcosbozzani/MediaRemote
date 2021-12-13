@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- https://github.com/Esri/calcite-ui-icons -->
+    <!-- https://commons.wikimedia.org/wiki/GNOME_High_contrast_icons -->
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="35dp"
+        android:stretchColumns="*"
+        app:layout_constraintBottom_toTopOf="@+id/txtInfo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableRow android:paddingBottom="@dimen/control_table_padding">
+
+            <ImageButton
+                android:id="@+id/btn_skip_backward"
+                android:layout_height="@dimen/control_button_height"
+                android:layout_marginRight="@dimen/control_table_padding"
+                android:background="@drawable/button"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:tag="skip_backward"
+                app:srcCompat="@drawable/skip_backward" />
+
+            <ImageButton
+                android:id="@+id/btn_subtitle"
+                android:layout_height="@dimen/control_button_height"
+                android:layout_marginRight="@dimen/control_table_padding"
+                android:background="@drawable/button"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:tag="subtitle"
+                app:srcCompat="@drawable/subtitle" />
+
+            <ImageButton
+                android:id="@+id/btn_skip_forward"
+                android:layout_height="@dimen/control_button_height"
+                android:background="@drawable/button"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:tag="skip_forward"
+                app:srcCompat="@drawable/skip_forward" />
+        </TableRow>
+
+        <TableRow android:paddingBottom="@dimen/control_table_padding">
+
+            <ImageButton
+                android:id="@+id/btn_seek_backward"
+                android:layout_height="@dimen/control_button_height"
+                android:layout_marginRight="@dimen/control_table_padding"
+                android:background="@drawable/button"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:tag="seek_backward"
+                app:srcCompat="@drawable/seek_backward" />
+
+            <ImageButton
+                android:id="@+id/btn_play"
+                android:layout_height="@dimen/control_button_height"
+                android:layout_marginRight="@dimen/control_table_padding"
+                android:background="@drawable/button"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:tag="play"
+                app:srcCompat="@drawable/play" />
+
+            <ImageButton
+                android:id="@+id/btn_seek_forward"
+                android:layout_height="@dimen/control_button_height"
+                android:background="@drawable/button"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:tag="seek_forward"
+                app:srcCompat="@drawable/seek_forward" />
+        </TableRow>
+
+        <TableRow android:paddingBottom="@dimen/control_table_padding">
+
+            <ImageButton
+                android:id="@+id/btn_volume_down"
+                android:layout_height="@dimen/control_button_height"
+                android:layout_marginRight="@dimen/control_table_padding"
+                android:background="@drawable/button"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:tag="volume_down"
+                app:srcCompat="@drawable/volume_down" />
+
+            <ImageButton
+                android:id="@+id/btn_audio"
+                android:layout_height="@dimen/control_button_height"
+                android:layout_marginRight="@dimen/control_table_padding"
+                android:background="@drawable/button"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:tag="audio"
+                app:srcCompat="@drawable/audio" />
+
+            <ImageButton
+                android:id="@+id/btn_volume_up"
+                android:layout_height="@dimen/control_button_height"
+                android:background="@drawable/button"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:tag="volume_up"
+                app:srcCompat="@drawable/volume_up" />
+        </TableRow>
+
+
+    </TableLayout>
+
+    <TextView
+        android:id="@+id/txtInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="35dp"
+        android:text="Media Remote"
+        app:layout_constraintBottom_toTopOf="@+id/btnSettings"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnSettings"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="35dp"
+        android:text="Settings"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
