@@ -1,24 +1,19 @@
-package com.home.mediaremoteclient;
+package duck.mediaremote.client;
+
+import android.os.Bundle;
+import android.view.Gravity;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.os.Bundle;
-import android.view.Gravity;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
-
-import com.home.mediaremoteclient.databinding.ActivitySettingsBinding;
+import duck.mediaremote.client.databinding.ActivitySettingsBinding;
 
 public class SettingsActivity extends AppCompatActivity {
 
     private Settings settings;
 
     private ActivitySettingsBinding binding;
-    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

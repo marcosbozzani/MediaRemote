@@ -1,15 +1,12 @@
-package com.home.mediaremoteclient;
-
-import androidx.appcompat.app.AppCompatActivity;
+package duck.mediaremote.client;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
 
-import com.home.mediaremoteclient.databinding.ActivityMainBinding;
+import androidx.appcompat.app.AppCompatActivity;
 
+import duck.mediaremote.client.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
