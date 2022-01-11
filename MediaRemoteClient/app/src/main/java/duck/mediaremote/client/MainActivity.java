@@ -1,10 +1,14 @@
 package duck.mediaremote.client;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.Objects;
 
 import duck.mediaremote.client.databinding.ActivityMainBinding;
 
@@ -13,30 +17,51 @@ public class MainActivity extends AppCompatActivity {
     private Settings settings;
     private Server server;
     private ActivityMainBinding binding;
+    private Vibrator vibrator;
+    private boolean useVibration;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        Objects.requireNonNull(getSupportActionBar()).hide();
 
         settings = new Settings(this);
         server = new Server(this);
+        vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+        useVibration = vibrator != null && settings.getUseButtonVibration();
 
-        binding.btnSeekBackward.setOnClickListener(this::buttonClick);
-        binding.btnPlay.setOnClickListener(this::buttonClick);
-        binding.btnSeekForward.setOnClickListener(this::buttonClick);
-        binding.btnVolumeDown.setOnClickListener(this::buttonClick);
-        binding.btnAudio.setOnClickListener(this::buttonClick);
-        binding.btnVolumeUp.setOnClickListener(this::buttonClick);
-        binding.btnSkipBackward.setOnClickListener(this::buttonClick);
-        binding.btnSubtitle.setOnClickListener(this::buttonClick);
-        binding.btnSkipForward.setOnClickListener(this::buttonClick);
+        View[] buttons = new View[]{
+                binding.btnPower,
+                binding.btnOutput,
+                binding.btnFullscreen,
+                binding.btnSettings,
+                //
+                binding.btnRed,
+                binding.btnGreen,
+                binding.btnYellow,
+                binding.btnBlue,
+                //
+                binding.btnPrevious,
+                binding.btnNext,
+                //
+                binding.btnRewind,
+                binding.btnPlay,
+                binding.btnForward,
+                //
+                binding.btnVolumeDown,
+                binding.btnVolumeUp,
+                //
+                binding.btnAudio,
+                binding.btnAudioOff,
+                binding.btnSubtitles,
+                binding.btnSubtitlesOff
+        };
 
-        binding.btnSettings.setOnClickListener(view -> {
-            final Intent intent = new Intent(this, SettingsActivity.class);
-            startActivity(intent);
-        });
+        for (View button : buttons) {
+            button.setOnClickListener(this::buttonClick);
+        }
     }
 
     @Override
@@ -46,31 +71,38 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void buttonClick(View view) {
-        String action = view.getTag().toString();
-        //System.out.println(action);
-        server.request(action, result -> {
-            if (!result.ok()) {
-                findServer();
-            }
-        });
+        if (useVibration) {
+            vibrator.cancel();
+            vibrator.vibrate(12);
+        }
+        if (view == binding.btnSettings) {
+            final Intent intent = new Intent(this, SettingsActivity.class);
+            startActivity(intent);
+        } else {
+            String action = view.getTag().toString();
+            server.request(action, result -> {
+                if (!result.ok()) {
+                    findServer();
+                }
+            });
+        }
     }
 
     private void findServer() {
         final String serverName = settings.getServerName();
-
         if (serverName.equals("")) {
-            binding.txtInfo.setText("Go to settings and choose a server");
+            binding.txtInfo.setText(getString(R.string.open_settings_and_choose_a_server));
         } else {
             server.setHostname(serverName);
-            binding.txtInfo.setText("Searching server " + serverName);
+            binding.txtInfo.setText(String.format(getString(R.string.searching_server), serverName));
 
             server.find(result -> {
                 runOnUiThread(() -> {
                     if (result.ok()) {
                         final String ip = result.value();
-                        binding.txtInfo.setText("Server " + serverName + " found at " + ip);
+                        binding.txtInfo.setText(String.format(getString(R.string.server_found), serverName, ip));
                     } else {
-                        binding.txtInfo.setText("Server " + serverName + " not found");
+                        binding.txtInfo.setText(String.format(getString(R.string.server_not_found), serverName));
                     }
                 });
             });

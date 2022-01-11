@@ -1,140 +1,324 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/activity_padding"
+    android:paddingRight="@dimen/activity_padding"
     tools:context=".MainActivity">
 
-    <!-- https://github.com/Esri/calcite-ui-icons -->
-    <!-- https://commons.wikimedia.org/wiki/GNOME_High_contrast_icons -->
+    <LinearLayout style="@style/ControlRow">
 
-    <TableLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="150dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="35dp"
-        android:stretchColumns="*"
-        app:layout_constraintBottom_toTopOf="@+id/txtInfo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TableRow android:paddingBottom="@dimen/control_table_padding">
+        <LinearLayout style="@style/ControlItem">
 
             <ImageButton
-                android:id="@+id/btn_skip_backward"
-                android:layout_height="@dimen/control_button_height"
-                android:layout_marginRight="@dimen/control_table_padding"
-                android:background="@drawable/button"
-                android:foreground="?attr/selectableItemBackgroundBorderless"
-                android:tag="skip_backward"
-                app:srcCompat="@drawable/skip_backward" />
+                android:id="@+id/btn_power"
+                style="@style/ControlButton"
+                android:backgroundTint="@color/teal_700"
+                android:contentDescription="@string/power"
+                android:tag="@string/power"
+                app:srcCompat="@drawable/icon_power" />
+
+            <TextView
+                style="@style/ControlLabel"
+                android:text="@string/power" />
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/ControlItem">
 
             <ImageButton
-                android:id="@+id/btn_subtitle"
-                android:layout_height="@dimen/control_button_height"
-                android:layout_marginRight="@dimen/control_table_padding"
-                android:background="@drawable/button"
-                android:foreground="?attr/selectableItemBackgroundBorderless"
-                android:tag="subtitle"
-                app:srcCompat="@drawable/subtitle" />
+                android:id="@+id/btn_output"
+                style="@style/ControlButton"
+                android:contentDescription="@string/output"
+                android:tag="@string/output"
+                app:srcCompat="@drawable/icon_output" />
+
+            <TextView
+                style="@style/ControlLabel"
+                android:text="@string/output" />
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/ControlItem">
 
             <ImageButton
-                android:id="@+id/btn_skip_forward"
-                android:layout_height="@dimen/control_button_height"
-                android:background="@drawable/button"
-                android:foreground="?attr/selectableItemBackgroundBorderless"
-                android:tag="skip_forward"
-                app:srcCompat="@drawable/skip_forward" />
-        </TableRow>
+                android:id="@+id/btn_fullscreen"
+                style="@style/ControlButton"
+                android:contentDescription="@string/fullscreen"
+                android:tag="@string/fullscreen"
+                app:srcCompat="@drawable/icon_fullscreen" />
 
-        <TableRow android:paddingBottom="@dimen/control_table_padding">
+            <TextView
+                style="@style/ControlLabel"
+                android:text="@string/fullscreen" />
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/ControlItem">
 
             <ImageButton
-                android:id="@+id/btn_seek_backward"
-                android:layout_height="@dimen/control_button_height"
-                android:layout_marginRight="@dimen/control_table_padding"
-                android:background="@drawable/button"
-                android:foreground="?attr/selectableItemBackgroundBorderless"
-                android:tag="seek_backward"
-                app:srcCompat="@drawable/seek_backward" />
+                android:id="@+id/btn_settings"
+                style="@style/ControlButton"
+                android:contentDescription="@string/settings"
+                android:tag="@string/settings"
+                app:srcCompat="@drawable/icon_settings" />
+
+            <TextView
+                style="@style/ControlLabel"
+                android:text="@string/settings" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Space style="@style/ControlRowSpaceLarge" />
+
+    <LinearLayout style="@style/ControlRow">
+
+        <LinearLayout style="@style/ControlItem">
+
+            <ImageButton
+                android:id="@+id/btn_red"
+                style="@style/ControlButtonSmall"
+                android:backgroundTint="@color/red_700"
+                android:contentDescription="@string/red"
+                android:tag="@string/red" />
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/ControlItem">
+
+            <ImageButton
+                android:id="@+id/btn_green"
+                style="@style/ControlButtonSmall"
+                android:backgroundTint="@color/green_700"
+                android:contentDescription="@string/green"
+                android:tag="@string/green" />
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/ControlItem">
+
+            <ImageButton
+                android:id="@+id/btn_yellow"
+                style="@style/ControlButtonSmall"
+                android:backgroundTint="@color/yellow_700"
+                android:contentDescription="@string/yellow"
+                android:tag="@string/yellow" />
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/ControlItem">
+
+            <ImageButton
+                android:id="@+id/btn_blue"
+                style="@style/ControlButtonSmall"
+                android:backgroundTint="@color/blue_700"
+                android:contentDescription="@string/blue"
+                android:tag="@string/blue" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Space style="@style/ControlRowSpaceLarge" />
+
+    <LinearLayout style="@style/ControlRow">
+
+        <LinearLayout style="@style/ControlItem">
+
+            <ImageButton
+                android:id="@+id/btn_previous"
+                style="@style/ControlButton"
+                android:contentDescription="@string/previous"
+                android:tag="@string/previous"
+                app:srcCompat="@drawable/icon_previous" />
+
+            <TextView
+                style="@style/ControlLabel"
+                android:text="@string/previous" />
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/ControlItem">
+
+            <ImageButton
+                android:id="@+id/btn_next"
+                style="@style/ControlButton"
+                android:contentDescription="@string/next"
+                android:tag="@string/next"
+                app:srcCompat="@drawable/icon_next" />
+
+            <TextView
+                style="@style/ControlLabel"
+                android:text="@string/next" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Space style="@style/ControlRowSpace" />
+
+    <LinearLayout style="@style/ControlRow">
+
+        <LinearLayout style="@style/ControlItem">
+
+            <ImageButton
+                android:id="@+id/btn_rewind"
+                style="@style/ControlButtonLarge"
+                android:contentDescription="@string/rewind"
+                android:tag="@string/rewind"
+                app:srcCompat="@drawable/icon_rewind" />
+
+            <TextView
+                style="@style/ControlLabel"
+                android:text="@string/rewind" />
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/ControlItem">
 
             <ImageButton
                 android:id="@+id/btn_play"
-                android:layout_height="@dimen/control_button_height"
-                android:layout_marginRight="@dimen/control_table_padding"
-                android:background="@drawable/button"
-                android:foreground="?attr/selectableItemBackgroundBorderless"
-                android:tag="play"
-                app:srcCompat="@drawable/play" />
+                style="@style/ControlButtonLarge"
+                android:contentDescription="@string/play"
+                android:tag="@string/play"
+                app:srcCompat="@drawable/icon_play" />
+
+            <TextView
+                style="@style/ControlLabel"
+                android:text="@string/play" />
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/ControlItem">
 
             <ImageButton
-                android:id="@+id/btn_seek_forward"
-                android:layout_height="@dimen/control_button_height"
-                android:background="@drawable/button"
-                android:foreground="?attr/selectableItemBackgroundBorderless"
-                android:tag="seek_forward"
-                app:srcCompat="@drawable/seek_forward" />
-        </TableRow>
+                android:id="@+id/btn_forward"
+                style="@style/ControlButtonLarge"
+                android:contentDescription="@string/forward"
+                android:tag="@string/forward"
+                app:srcCompat="@drawable/icon_forward" />
 
-        <TableRow android:paddingBottom="@dimen/control_table_padding">
+            <TextView
+                style="@style/ControlLabel"
+                android:text="@string/forward" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Space style="@style/ControlRowSpace" />
+
+    <LinearLayout style="@style/ControlRow">
+
+        <LinearLayout style="@style/ControlItem">
 
             <ImageButton
                 android:id="@+id/btn_volume_down"
-                android:layout_height="@dimen/control_button_height"
-                android:layout_marginRight="@dimen/control_table_padding"
-                android:background="@drawable/button"
-                android:foreground="?attr/selectableItemBackgroundBorderless"
-                android:tag="volume_down"
-                app:srcCompat="@drawable/volume_down" />
+                style="@style/ControlButton"
+                android:contentDescription="@string/volume_down"
+                android:tag="@string/volume_down"
+                app:srcCompat="@drawable/icon_volume_down" />
 
-            <ImageButton
-                android:id="@+id/btn_audio"
-                android:layout_height="@dimen/control_button_height"
-                android:layout_marginRight="@dimen/control_table_padding"
-                android:background="@drawable/button"
-                android:foreground="?attr/selectableItemBackgroundBorderless"
-                android:tag="audio"
-                app:srcCompat="@drawable/audio" />
+            <TextView
+                style="@style/ControlLabel"
+                android:text="@string/volume_down" />
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/ControlItem">
 
             <ImageButton
                 android:id="@+id/btn_volume_up"
-                android:layout_height="@dimen/control_button_height"
-                android:background="@drawable/button"
-                android:foreground="?attr/selectableItemBackgroundBorderless"
-                android:tag="volume_up"
-                app:srcCompat="@drawable/volume_up" />
-        </TableRow>
+                style="@style/ControlButton"
+                android:contentDescription="@string/volume_up"
+                android:tag="@string/volume_up"
+                app:srcCompat="@drawable/icon_volume_up" />
 
+            <TextView
+                style="@style/ControlLabel"
+                android:text="@string/volume_up" />
 
-    </TableLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Space style="@style/ControlRowSpaceLarge" />
+
+    <LinearLayout style="@style/ControlRow">
+
+        <LinearLayout style="@style/ControlItem">
+
+            <ImageButton
+                android:id="@+id/btn_audio"
+                style="@style/ControlButton"
+                android:contentDescription="@string/audio"
+                android:tag="@string/audio"
+                app:srcCompat="@drawable/icon_audio" />
+
+            <TextView
+                style="@style/ControlLabel"
+                android:text="@string/audio" />
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/ControlItem">
+
+            <ImageButton
+                android:id="@+id/btn_audio_off"
+                style="@style/ControlButton"
+                android:contentDescription="@string/audio_off"
+                android:tag="@string/audio_off"
+                app:srcCompat="@drawable/icon_audio_off" />
+
+            <TextView
+                style="@style/ControlLabel"
+                android:text="@string/audio_off" />
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/ControlItem">
+
+            <ImageButton
+                android:id="@+id/btn_subtitles"
+                style="@style/ControlButton"
+                android:contentDescription="@string/subtitles"
+                android:tag="@string/subtitles"
+                app:srcCompat="@drawable/icon_subtitles" />
+
+            <TextView
+                style="@style/ControlLabel"
+                android:text="@string/subtitles" />
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/ControlItem">
+
+            <ImageButton
+                android:id="@+id/btn_subtitles_off"
+                style="@style/ControlButton"
+                android:contentDescription="@string/subs_off"
+                android:tag="@string/subs_off"
+                app:srcCompat="@drawable/icon_subtitles_off" />
+
+            <TextView
+                style="@style/ControlLabel"
+                android:text="@string/subs_off" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Space style="@style/ControlRowSpaceLarge" />
 
     <TextView
-        android:id="@+id/txtInfo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="35dp"
-        android:text="Media Remote"
-        app:layout_constraintBottom_toTopOf="@+id/btnSettings"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:id="@+id/txt_info"
+        style="@style/ControlLabel"
+        android:text="@string/app_name" />
 
-    <Button
-        android:id="@+id/btnSettings"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="35dp"
-        android:text="Settings"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

@@ -1,5 +1,6 @@
 package duck.mediaremote.client;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
 
@@ -15,7 +16,17 @@ public class Settings {
         return data.getString("serverName", "");
     }
 
+    @SuppressLint("ApplySharedPref")
     public void setServerName(String value) {
-        data.edit().putString("serverName", value).apply();
+        data.edit().putString("serverName", value).commit();
+    }
+
+    public boolean getUseButtonVibration() {
+        return data.getBoolean("useButtonVibration", false);
+    }
+
+    @SuppressLint("ApplySharedPref")
+    public void setUseButtonVibration(boolean state) {
+        data.edit().putBoolean("useButtonVibration", state).commit();
     }
 }

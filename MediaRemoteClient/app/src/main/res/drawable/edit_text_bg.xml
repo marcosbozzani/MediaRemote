@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_focused="true">
+        <layer-list>
+            <item android:left="@dimen/edit_text_border_hide" android:right="@dimen/edit_text_border_hide" android:top="@dimen/edit_text_border_hide">
+                <shape android:shape="rectangle">
+                    <padding android:bottom="@dimen/edit_text_padding" android:top="@dimen/edit_text_padding" />
+                    <stroke android:width="@dimen/edit_text_border" android:color="@color/edit_text_border_focused" />
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+    <item>
+        <layer-list>
+            <item android:left="@dimen/edit_text_border_hide" android:right="@dimen/edit_text_border_hide" android:top="@dimen/edit_text_border_hide">
+                <shape android:shape="rectangle">
+                    <padding android:bottom="@dimen/edit_text_padding" android:top="@dimen/edit_text_padding" />
+                    <stroke android:width="@dimen/edit_text_border" android:color="@color/edit_text_border" />
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+</selector>

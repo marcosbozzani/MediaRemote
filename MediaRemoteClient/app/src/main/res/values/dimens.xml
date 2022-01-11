@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="control_button_height">75dp</dimen>
-    <dimen name="control_table_padding">10dp</dimen>
+    <dimen name="activity_padding">20dp</dimen>
+    <dimen name="button_radius">10dp</dimen>
+    <dimen name="edit_text_padding">10dp</dimen>
+    <dimen name="edit_text_border">2dp</dimen>
+    <dimen name="edit_text_border_hide">-4dp</dimen>
 </resources>
