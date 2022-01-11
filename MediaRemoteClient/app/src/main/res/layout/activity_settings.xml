@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:padding="@dimen/activity_padding"
     tools:context=".SettingsActivity">
@@ -23,7 +22,7 @@
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="@dimen/activity_padding"/>
+        android:layout_height="@dimen/activity_padding" />
 
     <androidx.appcompat.widget.SwitchCompat
         android:id="@+id/swt_vibration"
@@ -33,7 +32,7 @@
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="@dimen/activity_padding"/>
+        android:layout_height="@dimen/activity_padding" />
 
     <Button
         android:id="@+id/btn_save"
@@ -44,7 +43,7 @@
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="@dimen/activity_padding"/>
+        android:layout_height="@dimen/activity_padding" />
 
     <TextView
         android:id="@+id/txt_build"
