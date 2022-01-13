@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MediaRemote.Properties {
+namespace Duck.MediaRemote.Server.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -26,12 +26,24 @@ namespace MediaRemote.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool ShowCommands {
+        public bool ShowRequests {
             get {
-                return ((bool)(this["ShowCommands"]));
+                return ((bool)(this["ShowRequests"]));
             }
             set {
-                this["ShowCommands"] = value;
+                this["ShowRequests"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Profiles {
+            get {
+                return ((string)(this["Profiles"]));
+            }
+            set {
+                this["Profiles"] = value;
             }
         }
     }

@@ -1,0 +1,20 @@
+﻿<Project>
+	<Target Name="BuildConfig" BeforeTargets="BeforeBuild">
+		<WriteLinesToFile File="$(IntermediateOutputPath)gen.cs" Overwrite="true" Lines="
+			namespace $(RootNamespace)
+			{
+				static partial class BuildConfig
+				{ 
+					static BuildConfig()
+					{
+						BuildDate = &quot;$([System.DateTime]::UtcNow.ToString(&quot;o&quot;))&quot;%3B
+						BuildType = &quot;$(Configuration)&quot;%3B
+					}
+				}
+			}
+		" />
+		<ItemGroup>
+			<Compile Include="$(IntermediateOutputPath)gen.cs" />
+		</ItemGroup>
+	</Target>
+</Project>
