@@ -80,7 +80,7 @@ namespace Duck.MediaRemote.Server.Forms
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 45);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(935, 414);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(935, 539);
             this.flowLayoutPanel1.TabIndex = 8;
             // 
             // hkcPower
@@ -92,6 +92,7 @@ namespace Duck.MediaRemote.Server.Forms
             this.hkcPower.Size = new System.Drawing.Size(910, 35);
             this.hkcPower.TabIndex = 0;
             this.hkcPower.Title = "Power";
+            this.hkcPower.HotkeyChanged += new System.EventHandler(this.HotkeyChanged);
             // 
             // hkcOutput
             // 
@@ -102,6 +103,7 @@ namespace Duck.MediaRemote.Server.Forms
             this.hkcOutput.Size = new System.Drawing.Size(910, 35);
             this.hkcOutput.TabIndex = 1;
             this.hkcOutput.Title = "Output";
+            this.hkcOutput.HotkeyChanged += new System.EventHandler(this.HotkeyChanged);
             // 
             // hkcFullscreen
             // 
@@ -112,6 +114,7 @@ namespace Duck.MediaRemote.Server.Forms
             this.hkcFullscreen.Size = new System.Drawing.Size(910, 35);
             this.hkcFullscreen.TabIndex = 2;
             this.hkcFullscreen.Title = "Fullscreen";
+            this.hkcFullscreen.HotkeyChanged += new System.EventHandler(this.HotkeyChanged);
             // 
             // hkcRed
             // 
@@ -122,6 +125,7 @@ namespace Duck.MediaRemote.Server.Forms
             this.hkcRed.Size = new System.Drawing.Size(910, 35);
             this.hkcRed.TabIndex = 3;
             this.hkcRed.Title = "Red";
+            this.hkcRed.HotkeyChanged += new System.EventHandler(this.HotkeyChanged);
             // 
             // hkcGreen
             // 
@@ -132,6 +136,7 @@ namespace Duck.MediaRemote.Server.Forms
             this.hkcGreen.Size = new System.Drawing.Size(910, 35);
             this.hkcGreen.TabIndex = 4;
             this.hkcGreen.Title = "Green";
+            this.hkcGreen.HotkeyChanged += new System.EventHandler(this.HotkeyChanged);
             // 
             // hkcYellow
             // 
@@ -142,6 +147,7 @@ namespace Duck.MediaRemote.Server.Forms
             this.hkcYellow.Size = new System.Drawing.Size(910, 35);
             this.hkcYellow.TabIndex = 5;
             this.hkcYellow.Title = "Yellow";
+            this.hkcYellow.HotkeyChanged += new System.EventHandler(this.HotkeyChanged);
             // 
             // hkcBlue
             // 
@@ -152,6 +158,7 @@ namespace Duck.MediaRemote.Server.Forms
             this.hkcBlue.Size = new System.Drawing.Size(910, 35);
             this.hkcBlue.TabIndex = 6;
             this.hkcBlue.Title = "Blue";
+            this.hkcBlue.HotkeyChanged += new System.EventHandler(this.HotkeyChanged);
             // 
             // hkcPrevious
             // 
@@ -162,6 +169,7 @@ namespace Duck.MediaRemote.Server.Forms
             this.hkcPrevious.Size = new System.Drawing.Size(910, 35);
             this.hkcPrevious.TabIndex = 7;
             this.hkcPrevious.Title = "Previous";
+            this.hkcPrevious.HotkeyChanged += new System.EventHandler(this.HotkeyChanged);
             // 
             // hkcNext
             // 
@@ -172,6 +180,7 @@ namespace Duck.MediaRemote.Server.Forms
             this.hkcNext.Size = new System.Drawing.Size(910, 35);
             this.hkcNext.TabIndex = 8;
             this.hkcNext.Title = "Next";
+            this.hkcNext.HotkeyChanged += new System.EventHandler(this.HotkeyChanged);
             // 
             // hkcRewind
             // 
@@ -182,6 +191,7 @@ namespace Duck.MediaRemote.Server.Forms
             this.hkcRewind.Size = new System.Drawing.Size(910, 35);
             this.hkcRewind.TabIndex = 9;
             this.hkcRewind.Title = "Rewind";
+            this.hkcRewind.HotkeyChanged += new System.EventHandler(this.HotkeyChanged);
             // 
             // hkcPlay
             // 
@@ -192,6 +202,7 @@ namespace Duck.MediaRemote.Server.Forms
             this.hkcPlay.Size = new System.Drawing.Size(910, 35);
             this.hkcPlay.TabIndex = 10;
             this.hkcPlay.Title = "Play";
+            this.hkcPlay.HotkeyChanged += new System.EventHandler(this.HotkeyChanged);
             // 
             // hkcForward
             // 
@@ -202,6 +213,7 @@ namespace Duck.MediaRemote.Server.Forms
             this.hkcForward.Size = new System.Drawing.Size(910, 35);
             this.hkcForward.TabIndex = 11;
             this.hkcForward.Title = "Forward";
+            this.hkcForward.HotkeyChanged += new System.EventHandler(this.HotkeyChanged);
             // 
             // hkcVolumeDown
             // 
@@ -212,6 +224,7 @@ namespace Duck.MediaRemote.Server.Forms
             this.hkcVolumeDown.Size = new System.Drawing.Size(910, 35);
             this.hkcVolumeDown.TabIndex = 12;
             this.hkcVolumeDown.Title = "Volume Down";
+            this.hkcVolumeDown.HotkeyChanged += new System.EventHandler(this.HotkeyChanged);
             // 
             // hkcVolumeUp
             // 
@@ -222,6 +235,7 @@ namespace Duck.MediaRemote.Server.Forms
             this.hkcVolumeUp.Size = new System.Drawing.Size(910, 35);
             this.hkcVolumeUp.TabIndex = 13;
             this.hkcVolumeUp.Title = "Volume Up";
+            this.hkcVolumeUp.HotkeyChanged += new System.EventHandler(this.HotkeyChanged);
             // 
             // hkcAudio
             // 
@@ -232,6 +246,7 @@ namespace Duck.MediaRemote.Server.Forms
             this.hkcAudio.Size = new System.Drawing.Size(910, 35);
             this.hkcAudio.TabIndex = 14;
             this.hkcAudio.Title = "Audio";
+            this.hkcAudio.HotkeyChanged += new System.EventHandler(this.HotkeyChanged);
             // 
             // hkcAudioOff
             // 
@@ -242,6 +257,7 @@ namespace Duck.MediaRemote.Server.Forms
             this.hkcAudioOff.Size = new System.Drawing.Size(910, 35);
             this.hkcAudioOff.TabIndex = 15;
             this.hkcAudioOff.Title = "Audio Off";
+            this.hkcAudioOff.HotkeyChanged += new System.EventHandler(this.HotkeyChanged);
             // 
             // hkcSubtitles
             // 
@@ -252,6 +268,7 @@ namespace Duck.MediaRemote.Server.Forms
             this.hkcSubtitles.Size = new System.Drawing.Size(910, 35);
             this.hkcSubtitles.TabIndex = 16;
             this.hkcSubtitles.Title = "Subtitles";
+            this.hkcSubtitles.HotkeyChanged += new System.EventHandler(this.HotkeyChanged);
             // 
             // hkcSubsOff
             // 
@@ -262,6 +279,7 @@ namespace Duck.MediaRemote.Server.Forms
             this.hkcSubsOff.Size = new System.Drawing.Size(910, 35);
             this.hkcSubsOff.TabIndex = 17;
             this.hkcSubsOff.Title = "Subs Off";
+            this.hkcSubsOff.HotkeyChanged += new System.EventHandler(this.HotkeyChanged);
             // 
             // lblName
             // 
@@ -286,7 +304,7 @@ namespace Duck.MediaRemote.Server.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(934, 460);
+            this.ClientSize = new System.Drawing.Size(934, 585);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.flowLayoutPanel1);

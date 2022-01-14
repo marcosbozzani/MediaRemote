@@ -10,9 +10,8 @@ namespace Duck.MediaRemote.Server.Forms
 {
     public partial class MainForm : BaseForm
     {
-        private bool allowVisible = true;
+        private bool allowVisible = false;
         private bool allowClose = false;
-
 
         public MainForm()
         {
@@ -128,22 +127,18 @@ namespace Duck.MediaRemote.Server.Forms
 
         private void btnAddProfile_Click(object sender, EventArgs e)
         {
-            var profile = ProfileManager.Profiles[0].Clone();
-            using (var profileForm = new ProfileForm(profile, false))
+            using (var profileForm = new ProfileForm())
             {
                 profileForm.ShowDialog();
-                ProfileManager.Profiles.Add(profile);
-                ProfileManager.Save();
             }
         }
 
         private void btnRemoveProfile_Click(object sender, EventArgs e)
         {
             int index = lsbProfiles.SelectedIndex;
-            if (index != ListBox.NoMatches && index != 0)
+            if (index != ListBox.NoMatches)
             {
-                ProfileManager.Profiles.RemoveAt(index);
-                ProfileManager.Save();
+                ProfileManager.RemoveProfile(ProfileManager.Profiles[index]);
             }
         }
 
@@ -153,10 +148,9 @@ namespace Duck.MediaRemote.Server.Forms
             if (index != ListBox.NoMatches)
             {
                 var profile = ProfileManager.Profiles[index];
-                using (var profileForm = new ProfileForm(profile, index == 0))
+                using (var profileForm = new ProfileForm(profile))
                 {
                     profileForm.ShowDialog();
-                    ProfileManager.Save();
                 }
             }
         }

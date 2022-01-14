@@ -11,6 +11,8 @@ namespace Duck.MediaRemote.Server.Controls
             InitializeComponent();
         }
 
+        public event EventHandler HotkeyChanged;
+
         private Hotkey hotkey;
         public Hotkey Hotkey
         {
@@ -42,7 +44,15 @@ namespace Duck.MediaRemote.Server.Controls
             Hotkey.Alt = chbAlt.Checked;
             Hotkey.Shift = chbShift.Checked;
             Hotkey.Win = chbWin.Checked;
-            txtHotkey.Text = Hotkey.ToString();
+            var newHotkey = Hotkey.ToString();
+            if (txtHotkey.Text != newHotkey)
+            {
+                if (txtHotkey.Text != string.Empty && HotkeyChanged != null)
+                {
+                    HotkeyChanged(this, EventArgs.Empty);
+                }
+                txtHotkey.Text = newHotkey;
+            }
         }
 
         private void btnSelect_Click(object sender, EventArgs e)

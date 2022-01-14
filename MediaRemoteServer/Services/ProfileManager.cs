@@ -21,10 +21,6 @@ namespace Duck.MediaRemote.Server.Services
 
         static ProfileManager()
         {
-
-            Settings.Default.Profiles = "";
-            Settings.Default.Save();
-
             Profiles = deserializer.Deserialize<BindingList<Profile>>(Settings.Default.Profiles);
             if (Profiles == null)
             {
@@ -42,10 +38,36 @@ namespace Duck.MediaRemote.Server.Services
             }
         }
 
+        public static Profile GetDefaultProfile()
+        {
+            return Profiles[0];
+        }
+
+        public static bool IsDefaultProfile(Profile profile)
+        {
+            return Profiles.IndexOf(profile) == 0;
+        }
+
         public static Profile GetActiveProfile(string activeProcessName)
         {
             var profile = Profiles.FirstOrDefault(p => p.Name == activeProcessName);
-            return profile ?? Profiles[0];
+            return profile ?? GetDefaultProfile();
+        }
+
+        public static void AddProfile(Profile profile)
+        {
+            Profiles.Add(profile);
+            Save();
+        }
+
+        public static void RemoveProfile(Profile profile)
+        {
+            int index = Profiles.IndexOf(profile);
+            if (index != 0)
+            {
+                Profiles.RemoveAt(index);
+                Save();
+            }
         }
     }
 }

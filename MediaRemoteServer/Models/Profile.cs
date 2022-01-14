@@ -99,7 +99,7 @@ namespace Duck.MediaRemote.Server.Models
 
         public override string ToString()
         {
-            return string.IsNullOrEmpty(Name) ? "(default)" : Name;
+            return string.IsNullOrEmpty(Name) ? "Global" : Name;
         }
     }
 }

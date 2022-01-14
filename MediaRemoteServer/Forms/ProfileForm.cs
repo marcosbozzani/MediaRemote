@@ -1,5 +1,6 @@
 ﻿using Duck.MediaRemote.Server.Controls;
 using Duck.MediaRemote.Server.Models;
+using Duck.MediaRemote.Server.Services;
 using System;
 using System.Windows.Forms;
 
@@ -10,11 +11,18 @@ namespace Duck.MediaRemote.Server.Forms
         private readonly Profile profile;
         private readonly bool isDefaultProfile;
 
-        public ProfileForm(Profile profile, bool isDefaultProfile)
+        public ProfileForm(Profile profile = null)
         {
             InitializeComponent();
+
+            if (profile == null)
+            {
+                profile = new Profile();
+                ProfileManager.AddProfile(profile);
+            }
+
             this.profile = profile;
-            this.isDefaultProfile = isDefaultProfile;
+            isDefaultProfile = ProfileManager.IsDefaultProfile(profile);
 
             if (isDefaultProfile)
             {
@@ -89,6 +97,12 @@ namespace Duck.MediaRemote.Server.Forms
             {
                 profile.Name = txtName.Text.Trim();
             }
+            ProfileManager.Save();
+        }
+
+        private void HotkeyChanged(object sender, EventArgs e)
+        {
+            ProfileManager.Save();
         }
     }
 }
