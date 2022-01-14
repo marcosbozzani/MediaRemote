@@ -4,6 +4,7 @@ using EmbedIO;
 using System;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Duck.MediaRemote.Server
 {
@@ -18,7 +19,7 @@ namespace Duck.MediaRemote.Server
             var profile = ProfileManager.GetActiveProfile(processName);
             var hotkey = profile.GetHotkey(action);
 
-            if (hotkey == null)
+            if (hotkey == null || hotkey.Key == Keys.None)
             {
                 profile = ProfileManager.GetDefaultProfile();
                 hotkey = profile.GetHotkey(action);
