@@ -29,4 +29,13 @@ public class Settings {
     public void setUseButtonVibration(boolean state) {
         data.edit().putBoolean("useButtonVibration", state).commit();
     }
+
+    public int getVibrationIntensity() {
+        return data.getInt("vibrationIntensity", 12);
+    }
+
+    @SuppressLint("ApplySharedPref")
+    public void setVibrationIntensity(int intensity) {
+        data.edit().putInt("vibrationIntensity", intensity).commit();
+    }
 }

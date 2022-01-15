@@ -27,4 +27,5 @@
     <string name="server">Server</string>
     <string name="save">Save</string>
     <string name="use_button_vibration">Use button vibration</string>
+    <string name="vibration_intensity">Vibration intensity</string>
 </resources>

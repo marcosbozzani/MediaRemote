@@ -27,10 +27,12 @@ public class SettingsActivity extends AppCompatActivity {
         binding.txtServerName.setText(settings.getServerName());
         binding.swtVibration.setChecked(settings.getUseButtonVibration());
         binding.txtBuild.setText(String.format("%s (%s)", BuildConfig.BUILD_TIME, BuildConfig.BUILD_TYPE));
+        binding.skbVibrationIntensity.setProgress(settings.getVibrationIntensity());
 
         binding.btnSave.setOnClickListener(view -> {
             settings.setServerName(binding.txtServerName.getText().toString());
             settings.setUseButtonVibration(binding.swtVibration.isChecked());
+            settings.setVibrationIntensity(binding.skbVibrationIntensity.getProgress());
             Toast toast = Toast.makeText(this, getString(R.string.settings_saved), Toast.LENGTH_SHORT);
             toast.setGravity(Gravity.TOP, 0, 0);
             toast.show();

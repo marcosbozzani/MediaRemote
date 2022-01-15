@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
     private void buttonClick(View view) {
         if (useVibration) {
             vibrator.cancel();
-            vibrator.vibrate(12);
+            vibrator.vibrate(settings.getVibrationIntensity());
         }
         if (view == binding.btnSettings) {
             final Intent intent = new Intent(this, SettingsActivity.class);

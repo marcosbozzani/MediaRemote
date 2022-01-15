@@ -34,6 +34,24 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/activity_padding" />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:labelFor="@id/skbVibrationIntensity"
+        android:text="@string/vibration_intensity" />
+
+    <SeekBar
+        android:id="@+id/skbVibrationIntensity"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:indeterminate="false"
+        android:max="100"
+        android:progress="0" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/activity_padding" />
+
     <Button
         android:id="@+id/btn_save"
         android:layout_width="100dp"
